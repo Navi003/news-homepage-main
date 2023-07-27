@@ -1,0 +1,256 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  max-width: 100%;
+}
+body {
+  /* background: #000; */
+  font-family: inter;
+}
+ul {
+  list-style: none;
+}
+li {
+  cursor: pointer;
+}
+body.no-scroll {
+  overflow: hidden;
+}
+:root {
+  --mobile: 375px;
+  --desktop: 1440px;
+
+  --soft-Orange: hsl(35, 77%, 62%);
+  --soft-red: hsl(5, 85%, 63%);
+
+  --off-white: hsl(36, 100%, 99%);
+  --grayish-blue: hsl(233, 8%, 79%);
+  --dark-grayish-blue: hsl(236, 13%, 42%);
+  --very-dark-blue: hsl(240, 100%, 5%);
+}
+.hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+.container {
+  width: 1200px;
+  background-color: var(--off-white);
+  height: 100vh;
+  margin: 0 auto;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8rem;
+  /* margin-bottom: 4rem; */
+}
+.navlist {
+  display: flex;
+  list-style: none;
+  gap: 4rem;
+  margin-right: 4rem;
+  font-size: 1.4rem;
+  color: var(--dark-grayish-blue);
+}
+
+.hero {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  column-gap: 4rem;
+  row-gap: 4rem;
+  margin-bottom: 2rem;
+}
+
+.hero-main__img {
+  grid-column: span 2;
+  height: 100%;
+}
+.hero-main__img img {
+  grid-column: span 2;
+  height: 100%;
+}
+.hero-content {
+  grid-row: 1/3;
+  grid-column: 3/4;
+
+  background-color: var(--very-dark-blue);
+  padding: 2rem;
+  font-size: 2.6rem;
+}
+h2 {
+  color: var(--soft-Orange);
+}
+article {
+  color: var(--grayish-blue);
+  font-size: 2.2rem;
+  margin-top: 2rem;
+  font-weight: 700;
+}
+p {
+  color: var(--dark-grayish-blue);
+  font-size: 1.4rem;
+}
+.main-heading {
+  font-size: 5.8rem;
+  font-weight: bold;
+  line-height: 1;
+  color: var(--very-dark-blue);
+}
+.content-readmore {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.content-readmore p {
+  line-height: 1.5;
+  font-size: 1.6rem;
+}
+.btn-primary {
+  text-transform: uppercase;
+  padding: 1rem 2.2rem;
+  border: none;
+  background-color: var(--very-dark-blue);
+  font-weight: bold;
+  color: var(--grayish-blue);
+  letter-spacing: 0.2rem;
+  transition: 300ms;
+}
+.btn-primary:hover,
+.btn-primary:active {
+  background-color: var(--soft-red);
+  color: var(--off-white);
+  cursor: pointer;
+}
+
+.navlist-item:hover {
+  color: var(--soft-red);
+}
+
+article:hover {
+  color: var(--soft-Orange);
+  cursor: pointer;
+}
+
+.feature-img {
+  height: 10rem;
+}
+h4 {
+  font-size: 1.4rem;
+  color: var(--very-dark-blue);
+}
+h6 {
+  font-size: 2.2rem;
+  color: var(--grayish-blue);
+}
+.feature-box {
+  display: flex;
+  gap: 1rem;
+}
+.hero-contet-item__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.hero-content__item {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.hero-content__item article {
+  margin-bottom: 1rem;
+}
+.line {
+  width: 100%;
+  height: 0.2px;
+  background-color: var(--grayish-blue);
+}
+.hero-3 {
+  grid-column: 1/2;
+}
+
+.mobile-nav {
+  position: absolute;
+  width: 70%;
+  right: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--off-white);
+  padding: 2rem;
+  font-size: 1.8rem;
+  line-height: 2.2;
+  opacity: 1; /* Initially hide the element */
+  /* Add transitions for smooth animation */
+  box-shadow: 0.5s;
+  cursor: pointer;
+  transition: all 300ms;
+  transform: translateX(100%);
+  display: none;
+}
+
+.mobile-nav.visible {
+  transform: translateX(0);
+  box-shadow: -10px 0 200px rgba(0, 0, 0, 0.98);
+}
+
+.mobile-navlist {
+  margin-top: 10rem;
+}
+.mobile-nav img {
+  position: absolute;
+  right: 20px;
+}
+
+@media (max-width: 850px) {
+  html {
+    font-size: 58.5%;
+  }
+
+  .hero {
+    display: flex;
+    flex-direction: column;
+  }
+  .container {
+    width: 100%;
+    padding: 1rem;
+  }
+  .content-readmore {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+    height: 100%;
+  }
+}
+@media (max-width: 550px) {
+  html {
+    font-size: 56.5%;
+  }
+  .mobile-nav {
+    transform: translateX(100%);
+  }
+
+  .navlist {
+    display: none;
+  }
+  .btn-primary {
+    padding: 2rem 4rem;
+  }
+  .hamburger {
+    display: block;
+  }
+}
